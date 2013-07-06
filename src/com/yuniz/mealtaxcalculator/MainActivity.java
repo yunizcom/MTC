@@ -2,6 +2,7 @@ package com.yuniz.mealtaxcalculator;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 
 import com.yuniz.mealtaxcalculator.R;
 
@@ -18,7 +19,6 @@ import android.view.Display;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -155,9 +155,9 @@ public class MainActivity extends Activity {
 		linearLayout3.setPadding(0, (int)setNewHeight, 0, 0);
 		linearLayout4.setPadding(0, (int)setNewHeight, 0, 0);
 		
-		setNewHeight = screenHeight * 0.04;
+		setNewHeight = screenHeight * 0.02;
 		linearLayout2.setPadding(0, (int)setNewHeight, 0, 0);
-		setNewHeight = screenHeight * 0.04;
+		setNewHeight = screenHeight * 0.03;
 		calculateBtn.setPadding(0, (int)setNewHeight, 0, 0);
 		
 		setNewHeight = screenHeight * 0.01;
@@ -174,7 +174,7 @@ public class MainActivity extends Activity {
 
 		
 		
-		setNewHeight = screenHeight * 0.03;
+		setNewHeight = screenHeight * 0.04;
 		textView2.setTextSize(TypedValue.COMPLEX_UNIT_PX,(int)setNewHeight);
 		disCounted.setTextSize(TypedValue.COMPLEX_UNIT_PX,(int)setNewHeight);
 		textView7.setTextSize(TypedValue.COMPLEX_UNIT_PX,(int)setNewHeight);
@@ -245,9 +245,18 @@ public class MainActivity extends Activity {
 			Toast.makeText(getApplicationContext(), "Please touch on the numbers to insert your meal cost." , Toast.LENGTH_LONG).show();
 		}
 		
-		finalCost.setText("$" + Float.toString(totalCost));
+		BigDecimal result;
+        result=round(totalCost,2);
+		
+		finalCost.setText("$" + result);
 		
 	}
+	
+	public static BigDecimal round(float d, int decimalPlace) {
+        BigDecimal bd = new BigDecimal(Float.toString(d));
+        bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);       
+        return bd;
+    }
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

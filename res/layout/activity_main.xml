@@ -63,6 +63,7 @@
             android:textColor="#fff"
             android:textColorHint="#ccc"
             android:background="@null"
+            android:paddingRight="10dp"
             android:inputType="number" />
 
         <TextView
@@ -99,6 +100,7 @@
             android:textColor="#fff"
             android:textColorHint="#ccc"
             android:background="@null"
+            android:paddingRight="10dp"
             android:inputType="number" />
         
         <TextView
@@ -147,6 +149,7 @@
             android:textColor="#fff"
             android:textColorHint="#ccc"
             android:background="@null"
+            android:paddingRight="10dp"
             android:inputType="number" />
 
         <TextView
@@ -185,6 +188,7 @@
             android:textColorHint="#ccc"
             android:background="@null"
             android:gravity="right"
+            android:paddingRight="10dp"
             android:textSize="40dp" />
     </LinearLayout>
 
