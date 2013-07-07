@@ -131,9 +131,9 @@ public class MainActivity extends Activity {
 		}
 		
 		singleCost.setText("0.00");
-		serviceTax.setText("6");
+		serviceTax.setText("10");
 		disCounted.setText("0");
-		governmentTax.setText("10");
+		governmentTax.setText("6");
 		
 		//----------auto Adjust UI Elements size----------
 		if(smallScreen == true){
@@ -226,7 +226,7 @@ public class MainActivity extends Activity {
 		}
 		
 		if(serviceTax.getText().toString().trim().length() == 0){
-			serviceTax.setText("6");
+			serviceTax.setText("10");
 		}else{
 			if(Float.parseFloat(serviceTax.getText().toString()) > 0){
 				totalCost = totalCost + totalCost * (Float.parseFloat(serviceTax.getText().toString()) / 100);
@@ -234,7 +234,7 @@ public class MainActivity extends Activity {
 		}
 		
 		if(governmentTax.getText().toString().trim().length() == 0){
-			governmentTax.setText("10");
+			governmentTax.setText("6");
 		}else{
 			if(Float.parseFloat(governmentTax.getText().toString()) > 0){
 				totalCost = totalCost + totalCost * (Float.parseFloat(governmentTax.getText().toString()) / 100);
